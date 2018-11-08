@@ -98,5 +98,10 @@ class Dog
     SQL
     row = DB[:conn].execute(sql, hash[:name], hash[:breed])
 
+    if row[0][0] == nil
+      Dog.create(hash)
+    else
+      Dog.find_by_id(row[0][0])
+    end
   end
 end
