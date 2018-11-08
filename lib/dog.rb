@@ -79,4 +79,14 @@ class Dog
     end
     result
   end
+
+  def self.find_by_id(num)
+    result = nil
+    Dog.all.each do |dog|
+      if dog.id == num
+        result = dog 
+      end 
+    end
+    result
+  end
 end
