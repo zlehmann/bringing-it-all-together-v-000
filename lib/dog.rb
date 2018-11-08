@@ -42,7 +42,7 @@ class Dog
     SQL
 
     if self.id == nil
-      DB[:conn].execute(sql, dog.name, dog.breed)
+      DB[:conn].execute(sql, self.name, self.breed)
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
     else
       update
