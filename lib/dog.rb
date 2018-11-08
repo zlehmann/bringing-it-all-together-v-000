@@ -53,6 +53,7 @@ class Dog
   def self.create(hash)
     new_dog = Dog.new(hash)
     Dog.save(new_dog)
+    new_dog
   end
 
   def update
