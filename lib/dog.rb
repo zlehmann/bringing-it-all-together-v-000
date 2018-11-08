@@ -84,8 +84,8 @@ class Dog
     result = nil
     Dog.all.each do |dog|
       if dog.id == num
-        result = dog 
-      end 
+        result = dog
+      end
     end
     result
   end
