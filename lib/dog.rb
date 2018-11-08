@@ -104,5 +104,6 @@ class Dog
       result = Dog.find_by_id(row[0][0])
     end
     result
+    binding.pry
   end
 end
