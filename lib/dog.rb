@@ -1,5 +1,5 @@
 class Dog
-  attr_accessor
+  attr_accessor :id, :name, :breed
 
   def initialize(input)
     @id = nil
@@ -8,6 +8,6 @@ class Dog
   end
 
   def attributes
-
+  end
 
 end
