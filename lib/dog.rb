@@ -28,4 +28,12 @@ class Dog
     new_dog = Dog.new(hash)
   end
 
+  def self.find_by_name(name)
+    sql = <<-SQL
+      SELECT *
+      FROM dogs
+      WHERE name = ?
+    SQL
+    row = DB[:conn].execute(sql, name)
+
 end
