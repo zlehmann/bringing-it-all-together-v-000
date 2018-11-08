@@ -47,7 +47,7 @@ class Dog
     else
       update
     end
-    dog
+    self
   end
 
   def self.create(hash)
