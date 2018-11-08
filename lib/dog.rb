@@ -50,6 +50,13 @@ class Dog
     dog
   end
 
+  def self.create(hash)
+    new_dog = Dog.new(hash)
+    new_dog.save
+
+  def update
+  end
+
   def self.find_by_name(name)
     sql = <<-SQL
       SELECT *
