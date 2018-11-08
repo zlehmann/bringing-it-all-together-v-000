@@ -35,6 +35,21 @@ class Dog
     @@all
   end
 
+  def save(dog)
+    sql = <<-SQL
+      SELECT *
+      FROM dogs
+      WHERE id = ?
+    SQL
+    row = DB[:conn].execute(sql, dog.id)
+    if row[0][0] == nil
+      DB[:conn].execute("INSERT INTO dogs (id, name, breed) VALUES (?, ?, ?);", dog.id, dog.name, dog.breed)
+    else
+      dog.update
+    end
+    dog
+  end
+
   def self.find_by_name(name)
     sql = <<-SQL
       SELECT *
