@@ -22,4 +22,9 @@ class Dog
     DB[:conn].execute("DROP TABLE dogs;")
   end
 
+  def self.new_from_db(array)
+    hash = {:id = array[0], :name = array[1], :breed = array[2]}
+    new_dog = Dog.new(hash)  
+  end
+
 end
