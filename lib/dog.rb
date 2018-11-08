@@ -52,11 +52,16 @@ class Dog
 
   def self.create(hash)
     new_dog = Dog.new(hash)
-    Dog.save(new_dog)
-    new_dog
+    new_dog.save
   end
 
   def update
+    sql = <<-SQL
+      UPDATE dogs
+      SET  name = ?, breed = ?
+      WHERE id = ?
+    SQL
+    DB[:conn].execute(sql, self.name, self.breed, self.id)
   end
 
   def self.find_by_name(name)
