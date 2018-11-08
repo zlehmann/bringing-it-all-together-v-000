@@ -97,11 +97,12 @@ class Dog
       WHERE name = ? AND breed = ?
     SQL
     row = DB[:conn].execute(sql, hash[:name], hash[:breed])
-
+    result = nil
     if row[0][0] == nil
-      Dog.create(hash)
+      result = Dog.create(hash)
     else
-      Dog.find_by_id(row[0][0])
+      result = Dog.find_by_id(row[0][0])
     end
+    result
   end
 end
