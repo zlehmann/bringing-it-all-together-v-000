@@ -3,7 +3,7 @@ class Dog
   attr_accessor :id, :name, :breed
 
   def initialize(input)
-    @id = nil
+    @id = input[:id]
     @name = input[:name]
     @breed = input[:breed]
   end
