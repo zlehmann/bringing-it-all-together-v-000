@@ -2,10 +2,13 @@ require 'pry'
 class Dog
   attr_accessor :id, :name, :breed
 
+  @@all = []
+
   def initialize(input)
     @id = input[:id]
     @name = input[:name]
     @breed = input[:breed]
+    @@all << self
   end
 
   def self.create_table
@@ -35,5 +38,6 @@ class Dog
       WHERE name = ?
     SQL
     row = DB[:conn].execute(sql, name)
+
 
 end
