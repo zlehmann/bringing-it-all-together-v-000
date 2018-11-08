@@ -48,5 +48,6 @@ class Dog
         result = dog
       end
     end
+    result
   end
 end
