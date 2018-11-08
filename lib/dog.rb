@@ -3,8 +3,8 @@ class Dog
 
   def initialize(input)
     @id = nil
-    @name = input[':name']
-    @breed = input[':breed']
+    @name = input['name:']
+    @breed = input['breed:']
   end
 
   def attributes
